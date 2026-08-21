@@ -7,6 +7,7 @@
   --color-text: #1c1c1c;
   --font-heading: 'Poppins', sans-serif;
   --font-body: 'Poppins', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
   --container-max: 1200px;
   --radius: 12px;
   --transition-fast: 0.2s ease;
@@ -15,12 +16,14 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
+section[id] { scroll-margin-top: 90px; }
 body {
   margin: 0;
   font-family: var(--font-body);
   color: var(--color-text);
   background: var(--color-white);
   line-height: 1.5;
+  padding-top: 90px;
 }
 img, video { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }
@@ -57,16 +60,39 @@ p { margin: 0 0 1em; }
 
 /* ---------- Header ---------- */
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  width: 100%;
   z-index: 100;
-  background: transparent;
-  transition: background var(--transition-mid), box-shadow var(--transition-mid), backdrop-filter var(--transition-mid);
-}
-.site-header.is-scrolled {
   background: var(--color-navy);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-  backdrop-filter: saturate(140%) blur(6px);
+}
+.site-header.is-scrolled { box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25); }
+
+/* ---------- Wave dividers (the "Costa" in Costa Azul) ---------- */
+.wave-divider {
+  width: 100%;
+  height: 48px;
+  background: var(--wave-bg);
+  overflow: hidden;
+  line-height: 0;
+}
+.wave-divider svg {
+  display: block;
+  width: 140%;
+  height: 100%;
+  position: relative;
+  left: -20%;
+  animation: wave-drift 22s ease-in-out infinite alternate;
+}
+.wave-divider path { fill: var(--wave-fill); }
+@keyframes wave-drift {
+  from { transform: translateX(-2%); }
+  to { transform: translateX(2%); }
+}
+@media (min-width: 768px) {
+  .wave-divider { height: 64px; }
 }
 .header-inner {
   display: flex;
@@ -80,7 +106,7 @@ p { margin: 0 0 1em; }
   transition: transform var(--transition-fast);
 }
 .logo-link:hover { transform: translateY(-1px); }
-.logo-img { height: 40px; width: auto; border-radius: 8px; }
+.logo-img { height: 56px; width: auto; border-radius: 8px; }
 .site-nav { display: none; gap: 2rem; }
 .site-nav a {
   color: var(--color-white);
@@ -285,14 +311,28 @@ p { margin: 0 0 1em; }
 }
 .about-block:last-child { margin-bottom: 0; }
 
-.about-kicker {
-  display: block;
-  width: 48px;
-  height: 4px;
-  border-radius: 2px;
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-accent);
   margin-bottom: 1rem;
+}
+.eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 28px;
+  height: 2px;
   background: linear-gradient(90deg, var(--color-accent), var(--color-navy));
 }
+.eyebrow--light { color: #b9c6ec; }
+.eyebrow--light::before { background: linear-gradient(90deg, var(--color-white), var(--color-accent)); }
+.eyebrow--center { justify-content: center; }
 .about-text h3 { color: var(--color-navy); font-size: 1.5rem; }
 .about-text p { color: #3a3a3a; }
 
@@ -446,7 +486,6 @@ p { margin: 0 0 1em; }
   display: block;
 }
 
-.app-download-text .about-kicker { background: linear-gradient(90deg, var(--color-white), var(--color-accent)); }
 .app-download-text .section-title { color: var(--color-white); }
 .app-download-text p { color: rgba(255, 255, 255, 0.85); }
 .store-buttons { display: flex; flex-direction: column; gap: 1rem; margin-top: 1.5rem; }
@@ -454,15 +493,19 @@ p { margin: 0 0 1em; }
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  background: var(--color-white);
-  color: var(--color-navy);
-  padding: 0.9rem 1.5rem;
+  background: #000;
+  color: var(--color-white);
+  padding: 0.65rem 1.4rem;
   border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
   font-weight: 600;
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  line-height: 1.15;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
 }
-.store-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25); }
-.store-icon { width: 22px; height: 22px; flex-shrink: 0; }
+.store-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35); background: #1a1a1a; }
+.store-icon { width: 28px; height: 28px; flex-shrink: 0; color: var(--color-white); }
+.store-btn-text { display: flex; flex-direction: column; font-size: 1.05rem; }
+.store-btn-text small { font-size: 0.7rem; font-weight: 400; opacity: 0.85; text-transform: none; }
 
 @media (min-width: 768px) {
   .app-download-inner { grid-template-columns: 1fr 1fr; }
@@ -497,7 +540,6 @@ p { margin: 0 0 1em; }
   z-index: 1;
   max-width: 560px;
 }
-.contact-kicker { margin-left: auto; margin-right: auto; }
 .contact-subtitle {
   max-width: 480px;
   margin: 0 auto 2.25rem;
@@ -515,7 +557,9 @@ p { margin: 0 0 1em; }
 .btn-whatsapp:hover {
   box-shadow: 0 12px 28px rgba(37, 211, 102, 0.4);
 }
-.whatsapp-icon { font-size: 1.2rem; line-height: 1; }
+.whatsapp-icon { width: 26px; height: 26px; flex-shrink: 0; }
+.whatsapp-btn-text { display: flex; flex-direction: column; text-align: left; line-height: 1.2; }
+.whatsapp-btn-text small { font-size: 0.7rem; font-weight: 500; opacity: 0.9; }
 
 /* ---------- Footer ---------- */
 .site-footer {
