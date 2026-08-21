@@ -89,7 +89,14 @@
           <div class="about-media about-media--catalog">
             <span class="about-shape about-shape--1" aria-hidden="true"></span>
             <span class="about-shape about-shape--2" aria-hidden="true"></span>
-            <img src="assets/img/logo-lockup-navy.jpg" alt="Costa Azul Distribuidora" class="about-media-logo" />
+            <div class="category-cluster" aria-hidden="true">
+              <span class="cluster-chip cluster-chip--1"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M7 2v2h1.17L9 6.83V10c0 2.1 1.44 3.85 3.38 4.36L11.9 20H8v2h8v-2h-3.9l-.48-5.64C13.56 13.85 15 12.1 15 10V6.83L15.83 4H17V2H7zm3.17 4L9.5 4h5l-.67 2h-3.66zM11 10V8h2v2c0 1.03-.53 1.94-1.33 2.47C11.53 11.94 11 11.03 11 10z"/></svg></span>
+              <span class="cluster-chip cluster-chip--2"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M8 2v2h1l.5 3.5C7.02 8.14 5 10.7 5 13.75V22h14v-8.25c0-3.05-2.02-5.61-4.5-6.25L15 4h1V2H8zm2.06 4h3.88l.3 2H9.76l.3-2zM7 13.75C7 11.4 8.7 9.5 10.86 9.5h2.28C15.3 9.5 17 11.4 17 13.75V15H7v-1.25zM7 17h10v3H7v-3z"/></svg></span>
+              <span class="cluster-chip cluster-chip--3"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M18.5 3H5.5C4.67 3 4 3.67 4 4.5v2.32c0 1.13.5 2.2 1.36 2.93L9 12.94V19H6v2h12v-2h-3v-6.06l3.64-3.19A3.88 3.88 0 0 0 20 6.82V4.5c0-.83-.67-1.5-1.5-1.5zM18 6.82c0 .55-.24 1.07-.66 1.43L13 12.06 8.66 8.25A1.88 1.88 0 0 1 8 6.82V5h10v1.82z"/></svg></span>
+              <span class="cluster-chip cluster-chip--4"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M20.84 8.63 18 6.5V4a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v2.5L3.16 8.63A2 2 0 0 0 2 10.4V19a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-8.6a2 2 0 0 0-1.16-1.77zM8 5h8v1.5H8V5zm12 14H4v-8.6l8-6 8 6V19z"/></svg></span>
+              <span class="cluster-chip cluster-chip--5"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M11 21 20.35 9H14l1.5-7L6 14h6.5L11 21z"/></svg></span>
+              <span class="cluster-chip cluster-chip--6"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M20 4H4v2h1l1.6 9.59A2 2 0 0 0 8.57 17H17v-2H8.57l-.35-2h9.19a2 2 0 0 0 1.97-1.66L20 6H5.21l-.2-1.2A1 1 0 0 0 4 4zm-3 15a1.5 1.5 0 1 0 .001 3.001A1.5 1.5 0 0 0 17 19zm-8 0a1.5 1.5 0 1 0 .001 3.001A1.5 1.5 0 0 0 9 19z"/></svg></span>
+            </div>
           </div>
           <div class="about-text">
             <span class="eyebrow">Catálogo</span>
@@ -106,13 +113,17 @@
               <div class="mini-phone-screen">
                 <div class="mini-phone-topbar">
                   <span class="mini-phone-logo">CA</span>
-                  <span class="mini-phone-cart"></span>
+                  <svg class="mini-phone-cart" viewBox="0 0 24 24"><path fill="var(--color-accent)" d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42a.25.25 0 0 1-.25-.25c0-.05.01-.09.03-.13L8.1 13h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1 1 0 0 0 20 4H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
                 </div>
                 <div class="mini-phone-row mini-phone-row--wine"></div>
                 <div class="mini-phone-row mini-phone-row--beer"></div>
                 <div class="mini-phone-row mini-phone-row--spirit"></div>
                 <span class="mini-phone-cta"></span>
               </div>
+            </div>
+            <div class="floating-badge floating-badge--app" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path fill="#3f9142" d="M12 2a10 10 0 1 0 .001 20.001A10 10 0 0 0 12 2zm-1.2 14.6-4-4 1.4-1.4 2.6 2.6 5.6-5.6 1.4 1.4-7 7z"/></svg>
+              <span>Pedido confirmado</span>
             </div>
           </div>
           <div class="about-text">
@@ -126,17 +137,25 @@
           <div class="about-media about-media--delivery">
             <span class="about-shape about-shape--1" aria-hidden="true"></span>
             <span class="about-shape about-shape--2" aria-hidden="true"></span>
-            <svg class="route-illustration" viewBox="0 0 240 160" aria-hidden="true">
-              <circle cx="40" cy="120" r="9" fill="rgba(255,255,255,0.16)"/>
-              <circle cx="40" cy="120" r="5" fill="#fff"/>
-              <path class="route-path" d="M40,120 C90,120 70,45 130,45 C180,45 165,95 205,95" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-dasharray="2 12"/>
-              <g transform="translate(205,95)">
-                <path d="M-19,-9 h20 v10 h6 l7,8 v6 h-4 a5,5 0 1 1 -10,0 h-11 a5,5 0 1 1 -10,0 h-3 v-16 a2,2 0 0 1 2,-2 z" fill="#fff"/>
-                <circle cx="-13" cy="15" r="4.2" fill="var(--color-navy)" stroke="#fff" stroke-width="2"/>
-                <circle cx="2" cy="15" r="4.2" fill="var(--color-navy)" stroke="#fff" stroke-width="2"/>
+            <svg class="route-illustration" viewBox="0 0 240 150" aria-hidden="true">
+              <path class="route-path" d="M46,108 C100,108 84,42 138,42 C176,42 168,80 200,80" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-dasharray="1.5 13"/>
+              <g transform="translate(46,108)">
+                <rect x="-22" y="-22" width="44" height="34" rx="4" fill="rgba(255,255,255,0.14)"/>
+                <rect x="-16" y="-16" width="32" height="24" rx="2" fill="#fff"/>
+                <path d="M-16,-16 L0,-27 16,-16" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round"/>
+                <line x1="0" y1="-6" x2="0" y2="8" stroke="var(--color-navy)" stroke-width="2.5"/>
+                <line x1="-8" y1="1" x2="8" y2="1" stroke="var(--color-navy)" stroke-width="2.5"/>
               </g>
-              <path d="M113,45 l17,-17 17,17 -6,0 0,13 -22,0 0,-13z" fill="rgba(255,255,255,0.9)"/>
+              <g transform="translate(200,80)">
+                <rect x="-20" y="-20" width="40" height="30" rx="3" fill="#fff"/>
+                <rect x="-20" y="-28" width="40" height="10" rx="2" fill="var(--color-accent)"/>
+                <rect x="-6" y="-4" width="12" height="14" rx="1.5" fill="var(--color-navy)"/>
+              </g>
             </svg>
+            <div class="floating-badge floating-badge--delivery" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path fill="var(--color-navy)" d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9 2.29 3H17V9.5h2.5zm-1 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+              <span>Reparto en el día</span>
+            </div>
           </div>
           <div class="about-text">
             <span class="eyebrow">Logística</span>
