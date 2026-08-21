@@ -471,3 +471,69 @@ p { margin: 0 0 1em; }
   .screen-thumb:nth-child(2) { margin-top: 0; margin-left: -10px; }
   .store-buttons { flex-direction: row; }
 }
+
+/* ---------- Contacto ---------- */
+.contact {
+  position: relative;
+  background: var(--color-offwhite);
+  overflow: hidden;
+  text-align: center;
+}
+.contact-shape {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 70vw;
+  height: 70vw;
+  max-width: 640px;
+  max-height: 640px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(47, 77, 158, 0.08) 0%, transparent 70%);
+  animation: float-shape 9s ease-in-out infinite;
+  pointer-events: none;
+}
+.contact-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 560px;
+}
+.contact-kicker { margin-left: auto; margin-right: auto; }
+.contact-subtitle {
+  max-width: 480px;
+  margin: 0 auto 2.25rem;
+  color: #4a4a4a;
+  font-size: 1.05rem;
+}
+.btn-whatsapp {
+  position: relative;
+  background: #25d366;
+  color: var(--color-white);
+  padding: 1rem 2.25rem;
+  font-size: 1.1rem;
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+}
+.btn-whatsapp:hover {
+  box-shadow: 0 12px 28px rgba(37, 211, 102, 0.4);
+}
+.whatsapp-icon { font-size: 1.2rem; line-height: 1; }
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background: var(--color-navy-dark);
+  color: var(--color-white);
+  padding: 2.75rem 0;
+}
+.footer-inner { text-align: center; }
+.footer-logo {
+  height: 34px;
+  width: auto;
+  margin: 0 auto 1.1rem;
+  border-radius: 6px;
+  opacity: 0.95;
+}
+.footer-inner p {
+  margin: 0;
+  font-size: 0.85rem;
+  letter-spacing: 0.01em;
+  opacity: 0.7;
+}
