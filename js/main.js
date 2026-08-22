@@ -34,4 +34,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }, { threshold: 0.15 });
   revealEls.forEach((el) => observer.observe(el));
+
+  // Some mobile browsers ignore the HTML `muted` attribute for autoplay
+  // and leave the video paused until a tap; forcing it via JS first fixes it.
+  document.querySelectorAll('.phone-video').forEach((video) => {
+    video.muted = true;
+    video.setAttribute('muted', '');
+    video.playsInline = true;
+    const tryPlay = () => video.play().catch(() => {});
+    tryPlay();
+    video.addEventListener('loadeddata', tryPlay, { once: true });
+    video.addEventListener('canplay', tryPlay, { once: true });
+  });
+
+  document.addEventListener('visibilitychange', () => {
+    if (!document.hidden) {
+      document.querySelectorAll('.phone-video').forEach((video) => {
+        if (video.paused) video.play().catch(() => {});
+      });
+    }
+  });
 });
