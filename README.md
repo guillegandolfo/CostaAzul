@@ -14,12 +14,12 @@ assets/video/      Video de la app
 
 ## Publicar en GitHub Pages
 
-1. Pushear este repo a `main`:
+1. Pushear este repo a `master`:
    ```bash
-   git push -u origin main
+   git push -u origin master
    ```
 2. En GitHub: **Settings → Pages → Build and deployment → Source: Deploy from a branch**.
-3. Elegir branch `main`, carpeta `/ (root)`, guardar.
+3. Elegir branch `master`, carpeta `/ (root)`, guardar.
 4. GitHub Pages publicará el sitio en `https://guillegandolfo.github.io/CostaAzul/` en unos minutos.
 
 ## Desarrollo local
